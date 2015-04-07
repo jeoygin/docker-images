@@ -11,7 +11,7 @@ This repository contains **Dockerfile** of Java for Docker's automated build pub
 jeoygin/java provides multiple tagged images:
 
 * `latest` (default): Oracle Java 7 JDK
-* `oraclejdk7`: Oracle Java 7 JDK
+* `oracle-7-jdk`: Oracle Java 7 JDK
 
 ## Build
 
