@@ -3,11 +3,10 @@ FROM debian:wheezy
 MAINTAINER Jeoygin Wang <jeoygin@gmail.com>
 
 RUN \
-  apt-get update && \
-  apt-get install -y python-software-properties && \
+  echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list && \
+  echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main" >> /etc/apt/sources.list && \
+  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886 && \
   echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  sed -i 's/wheezy/trusty/g' /etc/apt/sources.list.d/webupd8team-java-wheezy.list && \
   apt-get update && \
   apt-get install -y oracle-java7-installer && \
   rm -rf /var/lib/apt/lists/* && \
